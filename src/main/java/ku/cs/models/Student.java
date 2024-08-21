@@ -20,19 +20,29 @@ public class Student {
     public void changeName(String name) {
         if (!name.trim().isEmpty()) {
             this.name = name.trim();
-        }
+        }//done
     }
 
     public void addScore(double score) {
         if (score > 0) {
             this.score += score;
-        }
+        }//done
     }
 
     public String grade()
     {
-        return "F";
-    }
+        String grade = "F";
+        if (score >= 80){
+            grade = "A";
+        } else if (score >= 70) {
+            grade = "B";
+        }else if (score >= 60) {
+            grade = "C";
+        }else if (score >= 50){
+            grade = "D";
+        }
+        return grade;
+    }//done
 
     public boolean isId(String id) {
         return this.id.equals(id);
