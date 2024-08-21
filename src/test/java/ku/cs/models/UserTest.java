@@ -62,16 +62,16 @@ class UserTest {
     @Test
     @DisplayName("Password should not be stored in plain text")
     public void testPasswordIsNotStoredInPlainText() {
-        User user = new User("user01", "plain-p@ssw0rd");
+        User user = new User("user01", "plainpassword");
         String actual = user.getPassword();
-        String unexpected = "plain-p@ssw0rd";
+        String unexpected = "plainpassword";
         assertNotEquals(unexpected, actual);
     }
 
     @Test
     @DisplayName("Password should be verified correctly using plain text")
     public void testPasswordShouldBeVerified() {
-        User user = new User("user01", "plain-p@ssw0rd");
+        User user = new User("user01", "plainpassword");
         boolean actual = user.validatePassword("plain-p@ssw0rd");
         assertTrue(actual);
     }
